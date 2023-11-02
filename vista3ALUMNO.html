@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Alumnos</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #DAD4B5, #952323);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #F2E8C6; /* Texto en color F2E8C6 */
+            font-size: 26px; /* Tamaño de fuente más grande */
+            padding-top: 40px;
+        }
+
+        .formulario-container {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            background-color: #941b13;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #F2E8C6; /* Texto en color F2E8C6 */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"] {
+            width: 80%; /* Modifica el ancho del cuadro de entrada */
+            padding: 7px; /* Modifica el espacio interno del cuadro de entrada */
+            border-radius: 10px; /* Modifica el radio de los bordes del cuadro de entrada */
+            border: 1px solid #cccccc;
+            margin-bottom: 20px; 
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type="submit"] {
+            background-image: linear-gradient(#cab558, #e9d900);
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #102247;
+        }
+
+        .registro-alumnos {
+            margin-top: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            color: #be3c3c;
+        }
+
+        .registro-alumnos h2 {
+            text-align: center;
+        }
+
+        .registro-alumnos ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .registro-alumnos li {
+            margin-bottom: 10px;
+        }
+
+        header {
+            padding-top: 20px;
+            margin-bottom: 20px;
+            background-color: #07073f;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: #fdfdff; padding: 10px; position: absolute; top: 0; left: 0; right: 0;">
+        <!-- Primera imagen institucional -->
+        <img src="https://unp.edu.py/wp-content/uploads/2017/06/logo-facultad-de-ciencias-aplicadas.png" alt="Institución 1" width="100" style="margin-right: 20px;">
+    
+        <!-- Segunda imagen institucional -->
+        <img src="" alt="https://unp.edu.py/wp-content/uploads/2015/04/UNP-Logo.png" width="100">
+    </header>
+
+    <h1>Registro de Alumnos</h1>
+    <div class="formulario-container">
+        <form id="registroForm" style="margin-top: 20px;">
+            <label for="nombreyapellido">Nombre y Apellido:</label>
+            <input type="text" id="nombreyapellido" name="nombreyapellido" required>
+            <label for="Materia">Materia:</label>
+            <input type="text" id="Materia" name="Materia" required>
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" name="curso" required>
+            <label for="ci">Cédula:</label>
+            <input type="number" id="ci" name="ci" required>
+            <label for="N.equipo">Número de equipo:</label>
+            <input type="number" id="N.equipo" name="numero de equipo" required>
+            <label for="fecha">Fecha de inicio:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <label for="hora-inicio">Hora de inicio:</label>
+            <input type="time" id="hora-inicio" name="hora-inicio" required>
+            <label for="hora-fin">Hora de finalización:</label>
+            <input type="time" id="hora-fin" name="hora-fin" required>
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
+    <div class="formulario-container">
+        <form id="registroForm">
+            <div class="registro-alumnos" id="registrosDeUso">
+                <h2>Registros de Uso</h2>
+                <ul>
+                    <!-- Aquí se agregarán los registros -->
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function registrarAlumno(event) {
+            event.preventDefault();
+
+            var nombreApellido = document.getElementById("nombreyapellido").value;
+            var materia = document.getElementById("Materia").value;
+            var curso = document.getElementById("curso").value;
+            var cedula = document.getElementById("ci").value;
+            var numeroEquipo = document.getElementById("N.equipo").value;
+            var fechaInicio = document.getElementById("fecha").value;
+            var horaInicio = document.getElementById("hora-inicio").value;
+            var horaFin = document.getElementById("hora-fin").value;
+
+            var registro = `${nombreApellido} - Materia: ${materia}, Curso: ${curso}, Cédula: ${cedula}, Número de equipo: ${numeroEquipo}, Fecha: ${fechaInicio}, Hora de inicio: ${horaInicio}, Hora de finalización: ${horaFin}`;
+
+            var listaRegistros = document.querySelector("#registrosDeUso ul");
+            var nuevoRegistro = document.createElement("li");
+            nuevoRegistro.textContent = registro;
+            listaRegistros.appendChild(nuevoRegistro);
+
+            document.getElementById("registroForm").reset();
+        }
+
+        document.getElementById("registroForm").addEventListener("submit", registrarAlumno);
+    </script>
+</body>
+</html>

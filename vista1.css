@@ -1,0 +1,15 @@
+
+
+body {
+    background: rgb(168, 103, 110);
+    background: radial-gradient(circle, rgb(255, 52, 72) 0%, rgba(204,35,67,1) 64%, rgba(50,4,13,1) 100%);
+
+    .centered-texto {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin-bottom: 10px;
+    }
+ 

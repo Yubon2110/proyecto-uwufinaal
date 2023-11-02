@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Universidad XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="return-button">
+            <a href="#" class="return-link">&#8592; Volver</a>
+        </div>
+        <div class="return-button">
+            <a href="vista1.html" class="return-link">&#8592; Volver</a>
+        </div>
+        
+        <h1>Panel de Administrador</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarAsistencia()">Asistencia</a></li>
+                <li><a href="#" onclick="mostrarEquipos()">Equipos</a></li>
+                <li><a href="#">Usuarios</a></li>
+                <li><a href="#">Calendario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="asistencia" style="display: none;">
+            <!-- Aquí puedes colocar tu cuadro de asistencia -->
+            <p>Asistencia recientemente cargada.</p>
+        </div>
+
+        <div id="equipos" style="display: none;">
+            <!-- Aquí puedes colocar tu tabla de equipos -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Equipo 1</th>
+                        <th>Laboratorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí puedes agregar filas con datos de equipos -->
+                    <tr>
+                        <td>Estudiante 1</td>
+                        <td>Equipo A</td>
+                        <td>Laboratorio 1</td>
+                    </tr>
+                    <tr>
+                        <td>Estudiante 2</td>
+                        <td>Equipo B</td>
+                        <td>Laboratorio 2</td>
+                    </tr>
+                    <!-- Agrega más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <style>
+        /* Estilos para el botón de retorno */
+        .return-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .return-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Resto de estilos (mantenidos como antes) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #39b394;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f7dc6f;
+        }
+
+        /* Estilos para el contenido principal */
+        main {
+            padding: 20px;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function mostrarAsistencia() {
+            document.getElementById('asistencia').style.display = 'block';
+            document.getElementById('equipos').style.display = 'none';
+        }
+
+        function mostrarEquipos() {
+            document.getElementById('asistencia').style.display = 'none';
+            document.getElementById('equipos').style.display = 'block';
+        }
+    </script>
+        <footer>
+            <p>&copy; 2023 Universidad XYZ</p>
+        </footer>
+    
+</body>
+</html>
+

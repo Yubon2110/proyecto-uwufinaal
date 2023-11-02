@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generación de Reportes Mensuales</title>
+</head>
+<body>
+    <h1>Generación de Reportes Mensuales</h1>
+    <form action="procesar_reporte.php" method="POST">
+        <label for="laboratorio">Laboratorio:</label>
+        <input type="text" id="laboratorio" name="laboratorio" required><br><br>
+
+        <label for="mes">Mes:</label>
+        <select id="mes" name="mes" required>
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+            <option value="marzo">Marzo</option>
+            <!-- Agrega más opciones para otros meses -->
+        </select><br><br>
+
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" name="curso" required><br><br>
+
+        <label for="materia">Materia:</label>
+        <input type="text" id="materia" name="materia" required><br><br>
+
+        <label for="uso_maquina">Uso de Máquina:</label>
+        <select id="uso_maquina" name="uso_maquina" required>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <label for="asistencia">Asistencia:</label>
+        <select id="asistencia" name="asistencia" required>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <input type="submit" value="Generar Reporte">
+    </form>
+</body>
+</html>
